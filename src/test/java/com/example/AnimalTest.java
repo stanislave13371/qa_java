@@ -2,9 +2,7 @@ package com.example;
 
 import org.junit.Before;
 import org.junit.Test;
-
 import java.util.List;
-
 import static org.junit.Assert.*;
 
 public class AnimalTest {
@@ -33,10 +31,8 @@ public class AnimalTest {
     }
 
     @Test
-    public void getFamilyReturnsListOfFamilies() {
-        String family = animal.getFamily();
-        // достаточно проверить, что в строке есть ключевое слово
-        assertTrue(family.contains("кошачьи"));
-        assertTrue(family.contains("псовые"));
+    public void getFamilyReturnsExpectedFamilies() {
+        String expected = "Существует несколько семейств: заячьи, беличьи, мышиные, кошачьи, псовые, медвежьи, куньи";
+        assertEquals(expected, animal.getFamily());
     }
 }
